@@ -1,0 +1,40 @@
+/* src/app/client-management/client-management.component.css */
+
+.client-management-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.client-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.client-card {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: calc(33.33% - 20px);
+  box-sizing: border-box;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: #45a049;
+  }
+}

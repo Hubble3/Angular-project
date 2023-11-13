@@ -1,0 +1,16 @@
+<!-- src/app/client-meeting-management/client-meeting-management.component.html -->
+
+<div class="client-meeting-management-container">
+  <h2>Client Meeting Management</h2>
+
+  <div class="meeting-list">
+    <div class="meeting-card" *ngFor="let meeting of meetings">
+      <h3>{{ meeting.title }}</h3>
+      <p>Date: {{ meeting.date | date:'short' }}</p>
+      <p>Location: {{ meeting.location }}</p>
+      <p>Agenda: {{ meeting.agenda }}</p>
+    </div>
+  </div>
+
+  <button (click)="onAddMeeting()">Add Meeting</button>
+</div>

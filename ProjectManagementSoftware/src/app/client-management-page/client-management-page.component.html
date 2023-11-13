@@ -1,0 +1,31 @@
+<!-- src/app/client-management-page/client-management-page.component.html -->
+
+<div class="client-management-page-container">
+  <h2>Client Management Page</h2>
+
+  <div class="client-list">
+    <div class="client-card" *ngFor="let client of clients">
+      <h3>{{ client.name }}</h3>
+      <p>Email: {{ client.email }}</p>
+      <p>Phone: {{ client.phone }}</p>
+    </div>
+  </div>
+
+  <button (click)="onAddClient()">Add Client</button>
+  
+<!-- Add client form -->
+<div *ngIf="showAddClientForm">
+  <h3>Add New Client</h3>
+  <form (submit)="addClient()">
+    <label for="clientName">Name:</label>
+    <input type="text" id="clientName" [(ngModel)]="newClient.name" required>
+
+    <label for="clientEmail">Email:</label>
+    <input type="email" id="clientEmail" [(ngModel)]="newClient.email" required>
+
+    <label for="clientPhone">Phone:</label>
+    <input type="tel" id="clientPhone" [(ngModel)]="newClient.phone" required>
+
+    <button type="submit">Submit</button>
+  </form>
+</div>

@@ -1,0 +1,36 @@
+<!-- src/app/meeting-management-page/meeting-management-page.component.html -->
+
+<div class="meeting-management-page-container">
+  <h2>Meeting Management Page</h2>
+
+  <div class="meeting-list">
+    <div class="meeting-card" *ngFor="let meeting of meetings">
+      <h3>{{ meeting.title }}</h3>
+      <p>Date: {{ meeting.date | date:'short' }}</p>
+      <p>Location: {{ meeting.location }}</p>
+      <p>Agenda: {{ meeting.agenda }}</p>
+    </div>
+  </div>
+
+  <button (click)="onAddMeeting()">Add Meeting</button>
+
+  <!-- Add meeting form -->
+  <div *ngIf="showAddMeetingForm">
+    <h3>Add New Meeting</h3>
+    <form (submit)="addMeeting()">
+      <label for="meetingTitle">Title:</label>
+      <input type="text" id="meetingTitle" [(ngModel)]="newMeeting.title" required>
+
+      <label for="meetingDate">Date:</label>
+      <input type="date" id="meetingDate" [(ngModel)]="newMeeting.date" required>
+
+      <label for="meetingLocation">Location:</label>
+      <input type="text" id="meetingLocation" [(ngModel)]="newMeeting.location" required>
+
+      <label for="meetingAgenda">Agenda:</label>
+      <textarea id="meetingAgenda" [(ngModel)]="newMeeting.agenda" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
